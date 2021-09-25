@@ -1,0 +1,25 @@
+
+
+.pokemon-card__container{
+    background-color: #F7F7F7;
+    text-align: center;
+    padding: 1rem 2rem;
+    min-height: 170px;
+}
+
+.pokemon-card__img{
+    width: 70px;
+    height: 70px;
+    margin-top: 0.5rem;
+}
+.pokemon-card__text{
+    color: grey;
+}
+
+.pokemon-card__text-id{
+    font-size: 0.5rem;
+}
+
+.pokemon-card__text-type{
+    font-size: 0.75rem;
+}

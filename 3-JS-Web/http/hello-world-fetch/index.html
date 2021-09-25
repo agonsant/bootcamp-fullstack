@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function manageRequestErrors(res){
+            console.log(res);
+            throw res.status;
+        }
+        // Petición GET
+        // Voy a solicitar la página de Google a Google
+        fetch('https://pokeapi.co/api/v2/pokemon/1').then(function(res){
+            // PRIMER THEN TENEMOS LA RESPUESTA PERO NO LOS DATOS
+           return res.json();
+        }).then(function(data){
+            console.log(data);
+        })
+
+        // fetch('../theory.js'); // Relative path version
+        // fetch('/http/theory.js');
+        // absoluta
+        fetch('http://localhost:5500/http/theory.js').then(function(res){
+            // PRIMER THEN TENEMOS LA RESPUESTA PERO NO LOS DATOS
+            return res.text();
+            
+        }).then((data) => {
+            const pre = document.createElement('pre');
+            pre.textContent=data;
+            document.body.appendChild(pre);
+        }); 
+
+        fetch('https://run.mocky.io/v3/048a0ed4-4784-4c0f-9514-5ebc1d4de25e')
+        .then(res => {
+          if(!res.ok) manageRequestErrors(res);   // throw new Error(res.statusText);
+          return res.json();
+        }).then(console.log)
+        .catch(console.warn);
+
+        // GESTION DE ERRORES
+        // 404 Example
+        fetch('https://run.mocky.io/v3/47a74f73-2033-4594-bf82-d510094dd432')
+        .then(res => {
+          if(!res.ok) manageRequestErrors(res);   // throw new Error(res.statusText);
+          return res.json();
+        }).then(console.log)
+        .catch(console.warn);
+
+        // 503 con Custom Body
+        
+        fetch('https://run.mocky.io/v3/7e42d2f3-fa0e-4cdf-b6cc-5e6dcf3107a1')
+        .then(res => {
+          // if(!res.ok) manageRequestErrors(res);   // throw new Error(res.statusText);
+          return res.json();
+        }).then(console.log)
+        .catch(console.warn);
+
+        // Ejemplo que no son GET
+        // CREO CABECERAS CUSTOMZADAS
+        const customHeaders = new Headers();
+        customHeaders.append('neoland-bootcamp', 'Awsome!');
+        // OPCIONES DE LA PETICION: CAMBIO EL METODO, HEADERS y LE PONGO UN BODY
+        const requestOpts = {
+            method: 'POST',
+            headers: customHeaders,
+            body: JSON.stringify({demo: 'Envio un Hola'})
+        };
+        // REALIZO LA PETICION
+        fetch('https://fullstack.free.beeceptor.com/posts-demo',requestOpts)
+        .then(console.log)
+        .then(console.log)
+        .catch(console.warn);
+
+
+    </script>
+    
+</body>
+</html>

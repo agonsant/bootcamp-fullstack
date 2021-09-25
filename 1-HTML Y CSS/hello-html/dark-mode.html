@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /** THEME VARIABLES **/
+
+      :root {
+        /** LIGHT THEME **/
+        --light-bg-color: white;
+        --light-color-default: lightgrey;
+        --light-color-primary: blueviolet;
+        --light-color-success: darkseagreen;
+        --light-color-info: lightskyblue;
+        --light-color-warning: lightyellow;
+        --light-color-danger: orangered;
+        --light-color-link: lightslategrey;
+        --light-color-text: grey;
+
+        /** DARK THEME **/
+        --dark-bg-color: rgb(39, 37, 37);
+        --dark-color-default: rgb(124, 122, 122);
+        --dark-color-primary: rgb(188, 153, 221);
+        --dark-color-success: rgb(52, 107, 52);
+        --dark-color-info: rgb(50, 84, 105);
+        --dark-color-warning: rgb(165, 165, 32);
+        --dark-color-danger: rgb(155, 59, 24);
+        --dark-color-link: rgb(71, 111, 151);
+        --dark-color-text: white;
+      }
+
+      /** Dark Mode section */
+      .theme-mode__container {
+        /** MAIN VARIABLES - DEFAULT LIGHT THEME **/
+        --bg-color: var(--light-bg-color);
+        --color-default: var(--light-color-default);
+        --color-primary: var(--light-color-primary);
+        --color-success: var(--light-color-success);
+        --color-info: var(--light-color-info);
+        --color-warning: var(--light-color-warning);
+        --color-danger: var(--light-color-danger);
+        --color-link: var(--light-color-link);
+        --color-text: var(--light-color-text);
+        background-color: var(--bg-color);
+        color: var(--color-text);
+        height: 100vh;
+      }
+
+      /**
+      * As we do not have JS and there is not parent selector
+      * we have to simulate a body as sibling of checkbox.
+      * The label for the checkbox must be in the simulated body
+      **/
+      .theme-mode__checkbox {
+        display: none;
+      }
+
+      .theme-mode__checkbox:checked ~ .theme-mode__container {
+        --bg-color: var(--dark-bg-color);
+        --color-default: var(--dark-color-default);
+        --color-primary: var(--dark-color-primary);
+        --color-success: var(--dark-color-success);
+        --color-info: var(--dark-color-info);
+        --color-warning: var(--dark-color-warning);
+        --color-danger: var(--dark-color-danger);
+        --color-link: var(--dark-color-link);
+        --color-text: var(--dark-color-text);
+      }
+
+      .theme-mode__label {
+      }
+
+      /** BUTTON SECTION **/
+
+      .btn__container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+      }
+
+      .btn {
+        padding: 0.5rem;
+        margin: 0.5rem;
+        min-width: 60px;
+        border-radius: 10%;
+        border:none;
+        background-color: var(--color-default);
+      }
+
+      .btn--primary {
+          background-color: var(--color-primary);
+      }
+
+      .btn--success {
+        background-color: var(--color-success);
+      }
+
+      .btn--info {
+        background-color: var(--color-info);
+      }
+
+      .btn--warning {
+        background-color: var(--color-warning);
+      }
+
+      .btn--danger {
+        background-color: var(--color-danger);
+      }
+
+      .btn--link {
+        background-color: var(--color-link);
+      }
+    </style>
+    <input
+      id="THEME_MODE_CHECKBOX"
+      class="theme-mode__checkbox"
+      type="checkbox"
+      value="Dark"
+    />
+    <div class="theme-mode__container">
+      <label class="theme-mode__label" for="THEME_MODE_CHECKBOX">Dark</label>
+      <div class="btn__container">
+        <button class="btn">Default</button>
+        <button class="btn btn--primary">Primary</button>
+        <button class="btn btn--success">Success</button>
+        <button class="btn btn--info">Info</button>
+        <button class="btn btn--warning">Warning</button>
+        <button class="btn btn--danger">Danger</button>
+        <button class="btn btn--link">Link</button>
+      </div>
+    </div>
+  </body>
+</html>

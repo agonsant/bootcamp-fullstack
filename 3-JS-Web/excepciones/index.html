@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        /**
+         *  Gestión de excepciones
+         * 
+         * - Cuando nosotros programamos, 
+         *   se producen errores al utilizar el lenguaje programación. 
+         *      A esto se le conoce como excepciones
+         * 
+         * - PAra gestionar las excepciones utilizamos el try/catch
+         * 
+         * 
+         * */
+
+         const a =undefined;
+
+         // Si no gestiono la excepcion, el JS deja de ejecutarse
+        //  console.log(a.demoProperty);
+        //  console.log('Algo despues de la excepcion');
+
+         // En algun punto del programa intento acceder a null o undefined
+         // GESTION MEDIANTE VALIDACION
+         if(a!==null && a !== undefined){
+            console.log(a.demoProperty);
+         }else{
+             console.log('No se ha encontrado el objeto o lo que sea');
+         }
+
+         console.log('Algo despues de la gestion mediante validación');
+
+         // El codigo que pudiese lanzar excepcion lo envolvemos en un try
+         try{
+             console.log(a.demoProperty); // esta linea ha lanzado una excepcion
+             console.log('Algo despues de la excepcion dentro del try');
+             // si el try termine, el catch no se ejecuta
+         }catch(err){
+             // si lo que hay en el try falla, se ejecuta el bloque del catch
+             // y asi puedo gestionar la excepcion
+             console.log('Gestiono mi excepcion de acceso a la variable "a"');
+             console.log(err); // error de la gestion que has tratado
+         }finally {
+             // Esto se ejecuta siempre, tanto cuando termine el try como 
+             // cuando termine el catch
+             // EJEMPLO TIPICO: Cerrar una conexión a BBDD
+         }
+
+
+         console.log('Algo despues del try y catch');
+
+         // Cuando programamos, podemos lanzar nosotros nuestros propios errores
+        //  throw new Error('Esto es un error de demo');
+
+        function add(a,b){
+            // Que pasa si quien usa la funcion mete un string?
+            if(typeof a !== 'number'){
+                throw new TypeError('El primer parámetro debe ser de tipo number');
+            }
+            return a+b;
+        }
+
+        console.log(add(1,3));
+        try{
+            console.log(add('Hola que ase!', 3));
+        }catch(err){
+            console.log('Se ha producido un error al llamar a add');
+        }
+
+    </script>
+    
+</body>
+</html>

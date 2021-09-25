@@ -1,0 +1,37 @@
+[
+  {
+    "origin": "MAD",
+    "destination": "BCN",
+    "outbound": "21/08/2021 15:50",
+    "inbound": "21/08/2021 17:50",
+    "id": 1
+  },
+  {
+    "origin": "AGL",
+    "destination": "BCN",
+    "outbound": "21/08/2021 15:50",
+    "inbound": "21/08/2021 17:50",
+    "id": 2
+  },
+  {
+    "origin": "AGL",
+    "destination": "MAD",
+    "outbound": "21/08/2021 15:50",
+    "inbound": "21/08/2021 17:50",
+    "id": 3
+  },
+  {
+    "origin": "MAD",
+    "destination": "LON",
+    "outboundDate": "asdsaa",
+    "inboundDate": "asdsaa",
+    "id": 4
+  },
+  {
+    "origin": "AGL",
+    "destination": "OTH",
+    "outbound": "21/08/2021 15:50",
+    "inbound": "21/08/2021 17:50",
+    "id": 5
+  }
+]

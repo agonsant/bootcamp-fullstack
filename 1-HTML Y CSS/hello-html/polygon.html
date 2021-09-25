@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <!-- OTHER SOLUTION https://codepen.io/wifi/pen/olKxE-->
+    
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .pacman {
+        background-color: brown;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: relative;
+      }
+
+      .pacman-eye {
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        background-color: white;
+        border-radius: 50%;
+        top: 15px;
+        left: 30px;
+      }
+
+      .pacman-mouth {
+        width: 100%;
+        position: absolute;
+        background-color: white;
+        height: 100%;
+        clip-path: polygon(100% 0%, 50% 50%, 100% 100%);
+        border-radius: 100%;
+        animation: eat 1s linear infinite;
+      }
+
+      @keyframes eat {
+        0% {
+          clip-path: polygon(100% 0%, 50% 50%, 100% 100%);
+        }
+        50% {
+          clip-path: polygon(100% 50%, 50% 50%, 100% 50%);
+        }
+        100% {
+          clip-path: polygon(100% 0%, 50% 50%, 100% 100%);
+        }
+      }
+
+      .food {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: brown;
+        animation: food-movement 2000ms linear infinite;
+      }
+
+      @keyframes food-movement {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100vw);
+        }
+      }
+    </style>
+    <div class="container">
+      <div class="pacman">
+        <div class="pacman-eye"></div>
+        <div class="pacman-mouth"></div>
+      </div>
+      <div class="food"></div>
+      <div class="food"></div>
+      <div class="food"></div>
+      <div class="food"></div>
+      <div class="food"></div>
+      <div class="food"></div>
+      <div class="food"></div>
+      <div class="food"></div>
+      <div class="food"></div>
+      <div class="food"></div>
+      <div class="food"></div>
+      <div class="food"></div>
+    </div>
+  </body>
+</html>

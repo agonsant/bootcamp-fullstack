@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        // Crear una promesa que se resuelva indicando 
+        // "Hola Promesas" a los 5 segundos y 
+        // cuando se resuelva lo pinte en un párrafo del body
+
+        // Creo la promesa
+        const myPromise = new Promise(function(resolve, reject){
+            // codigo asíncrono.
+            // Esperar 5 segundos => setTimeout
+            setTimeout(function(){
+                // Codigo se ejecutará a los 5 segundos en el hilo principal
+                resolve('Hola Promesas'); // resuelvo OK la promesa con un valor "Hola Promesas"
+            }, 5000);
+        });
+
+        // Defino la funcion cuando se encuentra en estado fulfilled, es decir resuelta OK
+        function callbackFulfilled(valueFulfilled){
+            const pDOM =  document.createElement('p');
+            pDOM.textContent = valueFulfilled;
+            document.body.appendChild(pDOM);
+        }
+
+        myPromise.then(callbackFulfilled);
+
+
+    </script>
+    
+</body>
+</html>

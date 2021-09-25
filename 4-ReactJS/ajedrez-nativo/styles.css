@@ -1,0 +1,21 @@
+.casilla{
+    height: 100px;
+    width: 100px;
+    outline: none;
+}
+
+.casilla-blanca{
+    background-color: #f1d5a5;
+}
+
+.casilla-negra{
+    background-color: #563B28;
+}
+
+.tablero{
+    border: 5px solid #563B28;
+}
+
+.row{
+    display: flex;
+}

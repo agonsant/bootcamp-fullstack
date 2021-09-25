@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --color-default: lightgrey;
+        --color-primary: lightcoral;
+        --color-danger: orangered;
+        --color-success: greenyellow;
+        --label-color: blue;
+        --bg-color: white;
+      }
+
+
+      .simulated-body{
+          height: 100vh;
+          background-color: var(--bg-color);
+      }
+
+      .btn__container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+      }
+
+      .btn {
+        padding: 0.5rem;
+        border: none;
+        min-width: 100px;
+        border-radius: 10%;
+        background-color: var(--color-default);
+        margin: 0.5rem;
+      }
+
+      .btn--primary {
+        background-color: var(--color-primary);
+      }
+
+      .btn--danger {
+        background-color: var(--color-danger);
+      }
+
+      .btn--success {
+        background-color: var(--color-success);
+      }
+
+      .theme__checkbox {
+        display: block;
+      }
+
+      .theme__checkbox:checked {
+        display: none;
+      }
+
+      .theme_label{
+          color: var(--label-color);
+      }
+
+      .theme__checkbox:checked ~ .simulated-body {
+        --color-default: darkgrey;
+        --color-primary: rgb(73, 39, 39);
+        --color-danger: rgb(138, 39, 4);
+        --color-success: rgb(40, 58, 13);
+        --bg-color: rgb(31, 30, 30);
+        --label-color: white;
+      }
+    </style>
+    <input id="THEME_CHECK" class="theme__checkbox" type="checkbox" />
+    <div class="simulated-body">
+      <label class="theme_label" for="THEME_CHECK">Change Theme</label>
+      <div class="btn__container">
+        <button class="btn">Default</button>
+        <button class="btn btn--primary">Primary</button>
+        <button class="btn btn--danger">Danger</button>
+        <button class="btn btn--success">Success</button>
+      </div>
+    </div>
+  </body>
+</html>

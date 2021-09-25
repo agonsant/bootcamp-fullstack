@@ -1,0 +1,13 @@
+.block {
+    width: 100px;
+    height: 100px;
+}
+
+
+.bg-green{
+    background-color: green;
+}
+
+.bg-red {
+    background-color: red;
+}

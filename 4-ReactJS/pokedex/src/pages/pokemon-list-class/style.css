@@ -1,0 +1,32 @@
+.pokemon-list__container{
+    margin-top: 2rem;
+}
+
+.pokemon-list__search-container{
+    background-color: #F7F7F7;
+    text-align: center;
+    padding: 0.75rem;
+}
+
+.pokemon-list__search-input{
+    width: 50%;
+    border: 2px solid;
+}
+
+.pokemon-list__search-input::placeholder {
+    font-size: 0.5rem;
+    color: blue;
+}
+
+.card-list__container{
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+
+.card-list__item{
+    margin-top: 1rem;
+    width: 160px;
+}

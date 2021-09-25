@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.main-grid{
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.header {
+    background-color: rosybrown;
+    grid-row: 1;
+    grid-column: 1/4;
+}
+
+.aside {
+    background-color: slateblue;
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.content{
+    background-color: tan;
+    min-height: 50vh;
+    grid-row: 2;
+    grid-column: 2/4;
+}
+
+
+.footer{
+    background-color: tomato;
+    grid-row: 3;
+    grid-column: 1/4;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.card {
+    min-width: 320px;
+    background-color: yellow;
+    border: 1px solid;
+    margin: 1em;
+}
+

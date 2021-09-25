@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .virginia-container{
+            background-color: #eeeeee;
+        }
+        .page-nav-container{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            margin-left: 2.5rem;
+            margin-right: 2.5rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .migas-container{
+            display: flex;
+            list-style-type: none;
+        }
+
+        .migas-list-item {
+            padding-right: 12px;
+            padding-left: 12px;
+            border-left: 1px solid grey;
+        }
+
+        .migas-list-item:first-child {
+            border-left: none;
+        }
+
+        .social-share-container{
+            display: flex;
+            list-style-type: none;
+        }
+    </style>
+
+    <div class="virginia-container">
+        <div class="page-nav-container">
+            <ul class="migas-container">
+                <li class="migas-list-item"><a href="https://www.iberia.com/es/">Home</a></li>
+                <li class="migas-list-item">Dos</li>
+                <li class="migas-list-item">Tres</li>
+                <li class="migas-list-item">Home</li>
+            </ul>
+            <ul class="social-share-container">
+                <li><a href="https://www.facebook.com">Facebook</a></li>
+                <li><a href="https://www.twitter.com">Twitter</a></li>
+                <li><a href="https://www.linkedin.com">Linkedin</a></li>
+            </ul>
+        </div>
+        <div>
+            <h1>Volar usando tus Avios</h1>
+            <h2>Accede a tu perfil para saber de cuántos Avios dispones</h2>
+        </div>
+        <div>
+            <input type="checkbox" id="IDA_VUELTA_CHECK" >
+            <label for="IDA_VUELTA_CHECK">Ida y vuelta</label>
+        </div>
+    </div>
+    
+</body>
+</html>

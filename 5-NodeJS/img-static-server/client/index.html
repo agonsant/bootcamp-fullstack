@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+      <style>
+          img{
+              width: 250px;
+          }
+      </style>
+    <script>
+        const BASE_STATIC_SERVER = 'http://localhost:5555';
+      function createFlightContent(f){ // dado unos vuelos, me pinta su HTML
+          const container = document.createDocumentFragment();
+          f.forEach(e=> {
+            const originTitle = document.createElement('h2');
+            originTitle.textContent = e.origin.name + ' (' + e.origin.iata + ')';
+            const originImg = document.createElement('img');
+            originImg.src= BASE_STATIC_SERVER + e.origin.img;
+
+            const desTitle = document.createElement('h2');
+            desTitle.textContent = e.destination.name + ' (' + e.destination.iata + ')';
+            const desImg = document.createElement('img');
+            desImg.src= BASE_STATIC_SERVER + e.destination.img;
+
+            container.appendChild(originTitle);
+            container.appendChild(originImg);
+            container.appendChild(desTitle);
+            container.appendChild(desImg);
+          })
+          const fContainer = document.getElementById('FLIGHTS_CONTAINER');
+          fContainer.appendChild(container);
+      }
+
+      fetch('http://localhost:5555/flights')
+      .then(r => r.json())
+      .then(createFlightContent);
+    </script>
+    <div id="FLIGHTS_CONTAINER"></div>
+
+    <form action="http://localhost:5555/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="cities">
+        <input type="submit" value="Subir">
+    </form>
+  </body>
+</html>

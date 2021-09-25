@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container .card:nth-child(2) {
+        transform: translate(100px, -75%);
+      }
+
+      .container .card:nth-child(3) {
+        transform: translate(200px, -150%);
+      }
+
+      .container .card:nth-child(4) {
+        transform: translate(400px, -225%);
+      }
+
+      .container .card:nth-child(5) {
+        transform: translate(300px, -325%);
+      }
+
+
+      .card {
+        background-image: url("./assets/images/cards/red2.png");
+        width: 234px;
+        height: 333px;
+      }
+
+      .diamons-8:hover {
+        background-image: url("./assets/images/cards/diamonds_8.png");
+      }
+
+      .hearts-ace:hover {
+        background-image: url("./assets/images/cards/hearts_ace.png");
+      }
+
+      .spades-jack:hover {
+        background-image: url("./assets/images/cards/spades_jack.png");
+      }
+
+      .clubs-king:hover {
+        background-image: url("./assets/images/cards/clubs_king.png");
+        transform: translateY(-400%)!important;
+      }
+
+      .joker:hover {
+        background-image: url("./assets/images/cards/joker_red.png");
+      }
+    </style>
+
+    <div class="container">
+      <div class="card diamons-8"></div>
+      <div class="card hearts-ace"></div>
+      <div class="card spades-jack"></div>
+      
+      <div class="card joker"></div>
+      <div class="card clubs-king"></div>
+    </div>
+  </body>
+</html>

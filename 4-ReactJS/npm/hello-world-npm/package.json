@@ -1,0 +1,21 @@
+{
+  "name": "hello-world-npm",
+  "version": "0.0.0",
+  "description": "Mi primer proyecto npm en la clase de neoland",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "neoland",
+    "clase",
+    "hello-npm"
+  ],
+  "author": "Alex",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/standalone": "^7.14.8",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
